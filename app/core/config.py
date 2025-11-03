@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./task_management.db"
     
     # Security
-    SECRET_KEY: str = "your-secret-key-change-in-production"
+    SECRET_KEY: str = "u8I6lFD1g5b0cYqCzuIBcLwdk7Wqzw1qTQpqM-ZqNIg"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
@@ -29,8 +29,7 @@ class Settings(BaseSettings):
         extra="ignore"
     )
     
-    @property
-    def cors_origins(self) -> List[str]:
+    def get_cors_origins(self) -> List[str]:
         """Parse ALLOWED_ORIGINS string into list"""
         return [origin.strip() for origin in self.ALLOWED_ORIGINS.split(",")]
 

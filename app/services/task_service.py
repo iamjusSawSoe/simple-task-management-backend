@@ -100,7 +100,7 @@ class TaskService:
         
         if not db_task:
             return None
-        s
+            
         update_data = task_data.model_dump(exclude_unset=True)
         
         for field, value in update_data.items():
